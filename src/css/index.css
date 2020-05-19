@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+:root {
+  /* Primary */
+  --BrightRed: hsl(12, 88%, 59%);
+  --DarkBlue: hsl(228, 39%, 23%);
+  /* Neutral */
+  --DarkGrayishBlue: hsl(227, 12%, 61%);
+  --VeryDarkBlue: hsl(233, 12%, 13%);
+  --VeryPaleRed: hsl(13, 100%, 96%);
+  --VaryLightGray: hsl(0, 0%, 98%);
+  /* Fonts */
+  --fontDefault: "Be Vietnam", sans-serif;
+  --baseFontSize: 16px;
+}
+
+body {
+  font-family: var(--fontDefault);
+  font-size: var(--baseFontSize);
+}
