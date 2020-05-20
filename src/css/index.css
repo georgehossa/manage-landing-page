@@ -5,16 +5,67 @@
   --BrightRed: hsl(12, 88%, 59%);
   --DarkBlue: hsl(228, 39%, 23%);
   /* Neutral */
+  --lightRed: hsla(12, 88%, 59%, 0.5);
   --DarkGrayishBlue: hsl(227, 12%, 61%);
   --VeryDarkBlue: hsl(233, 12%, 13%);
   --VeryPaleRed: hsl(13, 100%, 96%);
-  --VaryLightGray: hsl(0, 0%, 98%);
+  --VeryLightGray: hsl(0, 0%, 98%);
   /* Fonts */
   --fontDefault: "Be Vietnam", sans-serif;
   --baseFontSize: 16px;
+  --borderRadius: 2rem;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
 }
 
 body {
+  padding: 3rem;
   font-family: var(--fontDefault);
   font-size: var(--baseFontSize);
 }
+
+/*=============================================
+=            COMPONENTS            =
+=============================================*/
+
+/*----------  BUTTON  ----------*/
+.btn {
+  display: block;
+  width: max-content;
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--borderRadius);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: var(--BrightRed);
+  color: white;
+  box-shadow: 0 17px 9px -16px var(--BrightRed);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn.btn--white {
+  background-color: white;
+  color: var(--BrightRed);
+  box-shadow: 0 17px 9px -16px var(--DarkGrayishBlue);
+}
+
+.btn.btn--white:hover {
+  color: var(--lightRed);
+  opacity: 1;
+}
+
+/*=====  End of COMPONENTS  ======*/
