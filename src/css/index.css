@@ -14,6 +14,7 @@
   --fontDefault: "Be Vietnam", sans-serif;
   --baseFontSize: 16px;
   --borderRadius: 2rem;
+  --maxWidth: 76.66%;
 }
 
 *,
@@ -29,14 +30,56 @@ ul {
 }
 
 body {
-  padding: 3rem;
   font-family: var(--fontDefault);
   font-size: var(--baseFontSize);
 }
 
 /*=============================================
+=            LAYOUT            =
+=============================================*/
+
+.header {
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+/*=====  End of LAYOUT  ======*/
+
+/*=============================================
 =            COMPONENTS            =
 =============================================*/
+
+/*----------  NAV  ----------*/
+
+.nav,
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__list {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.nav__item {
+  margin: 0 1rem;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: var(--DarkBlue);
+}
+
+.nav__link:hover {
+  color: var(--DarkGrayishBlue);
+}
+
+.nav__logo {
+  align-self: flex-end;
+}
 
 /*----------  BUTTON  ----------*/
 .btn {
