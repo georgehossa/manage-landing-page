@@ -34,13 +34,24 @@ body {
   font-size: var(--baseFontSize);
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
 /*=============================================
 =            LAYOUT            =
 =============================================*/
 
-.header {
+.header,
+.hero,
+.about,
+.reviews {
   max-width: var(--maxWidth);
   margin: 0 auto;
+}
+
+.header {
   padding: 2rem 0;
 }
 
@@ -49,6 +60,37 @@ body {
 /*=============================================
 =            COMPONENTS            =
 =============================================*/
+
+/*----------  BUTTON  ----------*/
+.btn {
+  display: block;
+  width: 8.5rem;
+  padding: 0.8rem 0;
+  border-radius: var(--borderRadius);
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--BrightRed);
+  color: white;
+  box-shadow: 0 17px 9px -16px var(--BrightRed);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn.btn--white {
+  background-color: white;
+  color: var(--BrightRed);
+  box-shadow: 0 17px 9px -16px var(--DarkGrayishBlue);
+}
+
+.btn.btn--white:hover {
+  color: var(--lightRed);
+  opacity: 1;
+}
 
 /*----------  NAV  ----------*/
 
@@ -81,34 +123,90 @@ body {
   align-self: flex-end;
 }
 
-/*----------  BUTTON  ----------*/
-.btn {
-  display: block;
-  width: max-content;
-  padding: 0.6rem 1.5rem;
-  border-radius: var(--borderRadius);
-  font-size: 0.8rem;
-  font-weight: 500;
-  text-decoration: none;
-  background-color: var(--BrightRed);
-  color: white;
-  box-shadow: 0 17px 9px -16px var(--BrightRed);
-  transition: all 0.3s ease;
-}
-
-.btn:hover {
-  opacity: 0.8;
-}
-
-.btn.btn--white {
-  background-color: white;
-  color: var(--BrightRed);
-  box-shadow: 0 17px 9px -16px var(--DarkGrayishBlue);
-}
-
-.btn.btn--white:hover {
-  color: var(--lightRed);
-  opacity: 1;
+.nav__menu-icon {
+  display: none;
 }
 
 /*=====  End of COMPONENTS  ======*/
+
+/*=============================================
+=            MEDIA QUERIES            =
+=============================================*/
+
+@media (max-width: 375px) {
+  :root {
+    --maxWidth: 86.66%;
+  }
+
+  /*----------  NAV  ----------*/
+  .nav::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to top, var(--VeryDarkBlue), transparent);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+
+  .nav__menu-icon {
+    display: block;
+    height: 2rem;
+    width: 2rem;
+    border: none;
+    font-size: 0;
+    background-color: transparent;
+    background-image: url(../images/icon-hamburger.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+
+  .nav.active::before {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .nav__cta {
+    display: none;
+  }
+
+  .nav .nav__list {
+    position: fixed;
+    top: 6rem;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    /* display: none; */
+    flex-direction: column;
+    justify-content: center;
+    width: var(--maxWidth);
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    visibility: collapse;
+    font-size: 1rem;
+    line-height: 3rem;
+    background-color: var(--VeryLightGray);
+    opacity: 0;
+    transition: all 0.5s ease;
+  }
+
+  .nav.active .nav__menu-icon {
+    z-index: 2;
+    background-image: url(../images/icon-close.svg);
+  }
+
+  .nav.active .nav__list {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+/*=====  End of MEDIA QUERIES  ======*/

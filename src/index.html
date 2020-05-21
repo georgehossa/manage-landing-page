@@ -25,7 +25,8 @@
           <li class="nav__item"><a href="/" class="nav__link">Careers</a></li>
           <li class="nav__item"><a href="/" class="nav__link">Community</a></li>
         </ul>
-        <a href="/" class="btn btn--orange">Get Started</a>
+        <input type="button" role="button" class="nav__menu-icon" value="menu-trigger" name="menu-trigger">
+        <a class="btn btn--orange nav__cta" href="/">Get Started</a>
       </nav>
     </header>
     <section class="hero">
@@ -140,8 +141,10 @@
         </div>
         <div class="footer__suscription">
           <form action="POST">
-            <input type="text" placeholder="Updates in your inbox…">
-            <input type="submit" value="Go">
+            <label for="email">
+              <input name="email" type="email" placeholder="Updates in your inbox…">
+              <input type="submit" value="Go">
+            </label>
           </form>
         </div>
         <div class="footer__copyrights">
@@ -150,6 +153,7 @@
       </div>
     </footer>
   </main>
+  <script src="./js/index.js"></script>
 </body>
 
 </html>
