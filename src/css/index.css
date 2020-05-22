@@ -35,6 +35,7 @@ body {
   background-image: url(../images/bg-tablet-pattern.svg);
   background-position: 124% -20%;
   background-repeat: no-repeat;
+  color: var(--DarkGrayishBlue);
 }
 
 img {
@@ -56,6 +57,21 @@ img {
 
 .header {
   padding: 2rem 0;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.about {
+  position: relative;
+  display: grid;
+  grid-template: 1fr / repeat(2, 1fr);
+  column-gap: 3rem;
+  margin: 7.5rem auto;
 }
 
 /*=====  End of LAYOUT  ======*/
@@ -132,13 +148,6 @@ img {
 
 /*----------  HERO  ----------*/
 
-.hero {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
 .hero__info,
 .hero__image {
   flex: 1 50%;
@@ -157,7 +166,65 @@ img {
   color: var(--DarkGrayishBlue);
 }
 
+/*----------  ABOUT  ----------*/
+
+.about__intro,
+.about__copy {
+  padding-right: 6rem;
+}
+
+.about__title {
+  margin-bottom: 1.5rem;
+}
+
+.about__item {
+  display: grid;
+  grid-template: 1fr / 100%;
+  column-gap: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.about__item-header {
+  display: inline-flex;
+  align-items: center;
+}
+
+.about__item-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.18rem;
+  height: 2.5rem;
+  margin-right: 1.75rem;
+  border-radius: 1.2rem;
+  font-weight: bold;
+  background-color: var(--BrightRed);
+  color: white;
+}
+
+.about__item-content {
+  padding-left: calc(4.18rem + 1.75rem);
+}
+
 /*=====  End of COMPONENTS  ======*/
+
+/*=============================================
+=            UTILITIES            =
+=============================================*/
+
+h2.title--section {
+  font-size: 2rem;
+  line-height: 1.2;
+  color: var(--DarkBlue);
+}
+
+h3.subtitle {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--DarkBlue);
+}
+
+/*=====  End of UTILITIES  ======*/
 
 /*=============================================
 =            MEDIA QUERIES            =
@@ -267,6 +334,45 @@ img {
     padding-right: 0;
     padding-bottom: 2.5rem;
     color: var(--DarkGrayishBlue);
+  }
+
+  /*----------  ABOUT  ----------*/
+
+  .about {
+    display: block;
+  }
+
+  .about__intro,
+  .about__copy {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .about__copy {
+    line-height: 2;
+  }
+
+  h2.about__title {
+    line-height: 1.5;
+  }
+
+  .about__intro {
+    margin-bottom: 3.625rem;
+  }
+
+  .about__item-header {
+    border-radius: 1.2rem 0 0 1.2rem;
+    background-color: var(--VeryPaleRed);
+    margin-right: -20px;
+  }
+
+  .about__item-content {
+    padding-left: 0;
+    margin-top: 1.125rem;
+  }
+
+  .about__item-number {
+    margin-right: 1rem;
   }
 }
 
