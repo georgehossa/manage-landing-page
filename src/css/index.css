@@ -49,8 +49,7 @@ img {
 
 .header,
 .hero,
-.about,
-.reviews {
+.about {
   max-width: var(--maxWidth);
   margin: 0 auto;
 }
@@ -206,6 +205,58 @@ img {
   padding-left: calc(4.18rem + 1.75rem);
 }
 
+/*----------  REVIEWS  ----------*/
+
+.reviews__title {
+  text-align: center;
+}
+
+.reviews__carousel {
+  position: relative;
+  width: 100%;
+  padding: 6.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.reviews__list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: fit-content;
+}
+
+.reviews__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 33.75rem;
+  height: 13.75rem;
+  margin: 0 0.9375rem;
+  padding: 55px 44px 0;
+  text-align: center;
+  background-color: var(--VeryLightGray);
+  scroll-snap-align: center;
+}
+
+.reviews__avatar {
+  --avatarSize: 4.5rem;
+  position: absolute;
+  top: -2.25rem;
+  left: 0;
+  right: 0;
+  display: block;
+  width: var(--avatarSize);
+  height: var(--avatarSize);
+  margin: 0 auto;
+}
+
+.reviews__name {
+  margin-bottom: 1rem;
+}
+
 /*=====  End of COMPONENTS  ======*/
 
 /*=============================================
@@ -219,7 +270,7 @@ h2.title--section {
 }
 
 h3.subtitle {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 500;
   color: var(--DarkBlue);
 }
