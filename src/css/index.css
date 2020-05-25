@@ -174,6 +174,7 @@ img {
 
 .about__title {
   margin-bottom: 1.5rem;
+  color: var(--DarkBlue);
 }
 
 .about__item {
@@ -181,6 +182,10 @@ img {
   grid-template: 1fr / 100%;
   column-gap: 1.75rem;
   margin-bottom: 2.5rem;
+}
+
+.about__item-title {
+  color: var(--DarkBlue);
 }
 
 .about__item-header {
@@ -209,6 +214,7 @@ img {
 
 .reviews__title {
   text-align: center;
+  color: var(--DarkBlue);
 }
 
 .reviews__carousel {
@@ -255,6 +261,36 @@ img {
 
 .reviews__name {
   margin-bottom: 1rem;
+  color: var(--DarkBlue);
+}
+
+.reviews__cta {
+  margin: 1rem auto 11.25rem;
+}
+
+/*----------  BOTTOM BANNER  ----------*/
+
+.bottom-banner {
+  background-color: var(--BrightRed);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='814' height='814'%3E%3Crect width='436' height='970' x='774' y='-62' fill='rgba(255,255,255,0.08)' fill-rule='evenodd' rx='218' transform='rotate(45 718.814 -291.157)'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='814' height='814'%3E%3Crect width='436' height='970' x='774' y='-62' fill='rgba(255,255,255,0.08)' fill-rule='evenodd' rx='218' transform='rotate(45 718.814 -291.157)'/%3E%3C/svg%3E");
+  background-size: 600px, 600px;
+  background-position: 14% 10%, 145% 120%;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.bottom-banner__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--maxWidth);
+  margin: 0 auto;
+  height: 13.75rem;
+}
+
+.bottom-banner__title {
+  max-width: 436px;
 }
 
 /*=====  End of COMPONENTS  ======*/
@@ -266,13 +302,11 @@ img {
 h2.title--section {
   font-size: 2rem;
   line-height: 1.2;
-  color: var(--DarkBlue);
 }
 
 h3.subtitle {
   font-size: 1rem;
   font-weight: 500;
-  color: var(--DarkBlue);
 }
 
 /*=====  End of UTILITIES  ======*/
@@ -424,6 +458,30 @@ h3.subtitle {
 
   .about__item-number {
     margin-right: 1rem;
+  }
+
+  /*----------  BOTTOM BANNER  ----------*/
+
+  .bottom-banner {
+    background-color: var(--BrightRed);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='814' height='814'%3E%3Crect width='436' height='970' x='774' y='-62' fill='rgba(255,255,255,0.08)' fill-rule='evenodd' rx='218' transform='rotate(45 718.814 -291.157)'/%3E%3C/svg%3E");
+    background-size: 600px;
+    background-position: 220% -10%;
+    background-repeat: no-repeat;
+    color: white;
+  }
+
+  .bottom-banner__wrapper {
+    flex-direction: column;
+    justify-content: center;
+    height: 25.31rem;
+  }
+
+  h2.bottom-banner__title {
+    width: 100%;
+    margin-bottom: 1.625rem;
+    font-size: 2.3rem;
+    text-align: center;
   }
 }
 
