@@ -1,15 +1,14 @@
 const path = require('path');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    home: path.resolve(__dirname,'src/js/index.js'),
+    main: path.resolve(__dirname,'src/js/index.js'),
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.join(__dirname, 'dist'),
     filename: 'js/[name].js',
-    publicPath: 'http://localhost:9000/',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -25,21 +24,12 @@ module.exports = {
           'css-loader'
         ],
       },
-      /* {
+      {
         test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
         use: {
           loader: 'url-loader',
           options: {
-            limit: 90000,
-          }
-        }
-      }, */
-      {
-        test: /\.jpg|png|gif|woff|eot|ttf|svg|mp4|webm$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            outputPath: 'assets/',
+            limit: 100000,
           }
         }
       },
@@ -48,10 +38,11 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.html'),
+      filename: './index.html',
     }),
   ],
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
+    contentBase: path.resolve(__dirname, 'src'),
     hot: true,
     open: true,
     port: 9000,
